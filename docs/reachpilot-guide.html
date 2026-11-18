@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReachPilot — Assignment Guide</title>
+  <style>
+    :root {
+      --paper: #f6f4ee;
+      --cream: #fbfaf6;
+      --ink: #202a24;
+      --ink-soft: #3c4840;
+      --muted: #727a72;
+      --line: #e1ded3;
+      --sage: #3f5b48;
+      --sage-soft: #e9efe6;
+      --clay: #b98563;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+      font-size: 11.5pt;
+      line-height: 1.62;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 44px 48px; }
+    .hero {
+      padding: 56px 44px 40px;
+      background:
+        radial-gradient(900px 320px at 90% 0%, rgba(140,164,141,0.16), transparent 60%),
+        radial-gradient(700px 300px at 0% 0%, rgba(185,133,99,0.09), transparent 55%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      font-size: 9pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34pt;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 10px 0 14px;
+      color: var(--ink);
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20pt;
+      line-height: 1.15;
+      margin: 30px 0 10px;
+      color: var(--ink);
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 13pt;
+      margin: 18px 0 6px;
+      color: var(--sage);
+      page-break-after: avoid;
+    }
+    p { margin: 0 0 10px; }
+    ul, ol { margin: 6px 0 12px 20px; padding: 0; }
+    li { margin: 4px 0; }
+    .lead { font-size: 13pt; color: var(--ink-soft); max-width: 720px; }
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 12px 0;
+      page-break-inside: avoid;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .stat {
+      background: var(--sage-soft);
+      border: 1px solid #cbdcc6;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat strong { display: block; font-size: 18pt; color: var(--sage); }
+    .stat span { font-size: 9.5pt; color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 14px;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 7px 9px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--sage-soft);
+      color: var(--sage);
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: rgba(251,250,246,0.6); }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 9pt;
+      background: var(--cream);
+      margin-right: 4px;
+    }
+    .badge.sage { background: var(--sage-soft); color: var(--sage); border-color: #cbdcc6; }
+    .badge.clay { background: #f5e9df; color: #8a5c3f; border-color: #eadbc8; }
+    .img {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin: 10px 0 6px;
+    }
+    .caption { font-size: 9pt; color: var(--muted); margin-bottom: 16px; }
+    .callout {
+      border-left: 3px solid var(--sage);
+      background: var(--sage-soft);
+      padding: 12px 14px;
+      border-radius: 0 10px 10px 0;
+      margin: 12px 0;
+    }
+    .footer {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 9pt;
+      color: var(--muted);
+    }
+    @page {
+      size: A4;
+      margin: 16mm 14mm;
+    }
+    @media print {
+      .hero { padding: 24px 0 20px; }
+      .wrap { padding: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Sankar Group — AI Automation Internship Assignment</p>
+      <h1>ReachPilot</h1>
+      <p class="lead">A calm, end-to-end AI influencer research, outreach, follow-up and reply-management studio. Built as a working web application instead of a mockup, with public data only, human approval before every send, and a production deployment on Vercel.</p>
+      <p>
+        <span class="badge sage">Live demo</span> <a href="https://reachpilot-ai.vercel.app">https://reachpilot-ai.vercel.app</a><br/>
+        <span class="badge">Repository</span> <a href="https://github.com/OPBSUTHAR/reachpilot-ai">https://github.com/OPBSUTHAR/reachpilot-ai</a><br/>
+        <span class="badge">Prepared by</span> Omprakash Suthar (@OPBSUTHAR)
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <h2>1. Assignment overview</h2>
+    <p>The assignment asks for an AI-powered automation that discovers relevant Instagram influencers, collects publicly available business contact details, sends personalised cold emails through Gmail, manages follow-ups, and handles incoming replies. The required end-to-end chain is:</p>
+    <div class="card">
+      Instagram research → contact collection → AI filtering → Google Sheets/CRM → personalised Gmail outreach → follow-ups → reply detection → AI reply draft → CRM status update
+    </div>
+    <p>ReachPilot delivers that chain as a usable product. It keeps the same stages, but replaces fragile spreadsheets and manual copy-paste with one calm workspace, a typed data model, persistent storage, optional Claude/Gmail adapters, and a deterministic fallback so the demo works without secrets.</p>
+
+    <div class="grid">
+      <div class="stat"><strong>25</strong><span>curated creator profiles in the discovery catalogue</span></div>
+      <div class="stat"><strong>15</strong><span>seeded CRM records with realistic statuses</span></div>
+      <div class="stat"><strong>9</strong><span>pipeline statuses from New Lead to Collaboration Confirmed</span></div>
+      <div class="stat"><strong>20</strong><span>default daily sending limit with opt-out honouring</span></div>
+    </div>
+
+    <h2>2. What ReachPilot is</h2>
+    <p>ReachPilot is a small studio for Sankar Group campaigns. It is designed for one operator who wants to move slowly and carefully: find creators who fit, understand why they fit, draft respectful emails, approve them, send them, follow up at the right time, and reply to interested creators without losing context.</p>
+    <ul>
+      <li><strong>Public data only.</strong> Profiles, public business emails, locations, follower counts and bios. No scraping, no private data, no unauthorised access.</li>
+      <li><strong>Human approval always.</strong> Nothing is sent until a person approves it. AI drafts; humans decide.</li>
+      <li><strong>Calm by default.</strong> Warm paper background, deep green ink, sage accents, generous spacing, serif headlines. No neon dashboards, no shouting metrics.</li>
+      <li><strong>Works without secrets.</strong> Claude, Vercel AI Gateway and Gmail are optional. The app ships with a guided local model and a demo outbox.</li>
+    </ul>
+
+    <h2>3. End-to-end workflow implemented</h2>
+    <table>
+      <thead><tr><th>Assignment step</th><th>ReachPilot implementation</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram influencer research</td><td>Discover page with niche, location, follower range and email-only filters; curated public catalogue; manual public-profile entry with compliance note.</td></tr>
+        <tr><td>AI-based filtering</td><td>Fit score 0–100, tier A/B/C, one-line rationale, tags. Uses Claude when configured, otherwise Vercel AI Gateway, otherwise a deterministic local scorer.</td></tr>
+        <tr><td>Google Sheets / CRM</td><td>Built-in CRM with 9 statuses, activity timeline, notes, next follow-up dates, tags, CSV export.</td></tr>
+        <tr><td>AI cold email</td><td>Personalised subject and body per creator, brand and campaign context, clear call to action, sender identification and opt-out line. Drafts sit in an approval queue.</td></tr>
+        <tr><td>Automated follow-ups</td><td>Detects due emails, sends a first follow-up after 4 days and a second after 6 more days, respects the daily limit, and stops on reply, decline or opt-out.</td></tr>
+        <tr><td>AI reply management</td><td>Inbox classifies replies into interested, pricing, collaboration, not interested, opt-out, question or other, with confidence and a suggested next action. Drafts a reply for human approval.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Interface guide</h2>
+    <p>The application has seven screens. Each one maps to a stage of the outreach loop.</p>
+
+    <img class="img" src="screenshots/overview.png" alt="Overview dashboard" />
+    <p class="caption">Overview — greeting, four headline numbers, “needs you today”, pipeline stage counts, recent activity and the campaign card.</p>
+
+    <h3>Overview</h3>
+    <ul>
+      <li>Greets the operator by first name and shows pipeline, approvals, open conversations and confirmed collaborations.</li>
+      <li>Lists the three things that need attention today: reply drafts, initial drafts and follow-ups due.</li>
+      <li>Shows stage counts with progress bars and a recent activity timeline.</li>
+      <li>Right column shows the campaign, brand tone, offer, audience and coverage.</li>
+    </ul>
+
+    <img class="img" src="screenshots/discover.png" alt="Discover page" />
+    <p class="caption">Discover — filters, public-profile cards, selection bar and the manual public-profile modal.</p>
+
+    <h3>Discover</h3>
+    <ul>
+      <li>Search by name, handle, niche, location or bio. Filter by niche, location and follower range. Toggle email-only.</li>
+      <li>Each card shows avatar, fit score, niche, followers, location, public business email, tags and a short bio.</li>
+      <li>Re-screen any creator with AI. Add one or many to the pipeline.</li>
+      <li>“Add public profile” lets an operator enter a creator found manually, with a compliance note that only public business details may be used.</li>
+      <li>A compliance strip states: no automated scraping, no private data, opt-out honoured.</li>
+    </ul>
+
+    <h3>Pipeline</h3>
+    <ul>
+      <li>Group tabs: everyone, new, email ready, contacted, replies, confirmed, closed.</li>
+      <li>Search, niche filter and four sort modes: best fit, most followers, recently added, follow-up soon.</li>
+      <li>Desktop table and mobile cards, both with checkbox selection and bulk “Draft outreach”.</li>
+      <li>Opening a creator shows a detail modal: status editor, AI rationale, conversation history, contact card, notes, recent activity and an opt-out note.</li>
+    </ul>
+
+    <img class="img" src="screenshots/outreach.png" alt="Outreach page" />
+    <p class="caption">Outreach — approval queue, approved ready-to-send queue, follow-up panel, sent shelf and sample emails.</p>
+
+    <h3>Outreach</h3>
+    <ul>
+      <li>Approve queue: every initial email starts in review. Approve, edit or skip.</li>
+      <li>Approved queue: shows daily quota, sender, and a one-click send for the whole approved batch.</li>
+      <li>Follow-up panel: shows what is due and lets the operator run the follow-up check.</li>
+      <li>Sent shelf keeps a record of what went out and when.</li>
+      <li>Sample initial and follow-up emails are visible for review, and drafts can be edited before approval.</li>
+    </ul>
+
+    <img class="img" src="screenshots/inbox.png" alt="Inbox page" />
+    <p class="caption">Inbox — conversation list, AI read panel with confidence, and an editable reply draft.</p>
+
+    <h3>Inbox</h3>
+    <ul>
+      <li>Three tabs: needs you, handled, all replies.</li>
+      <li>AI read panel shows category, confidence, summary and suggested next action.</li>
+      <li>Reply draft editor with subject and body, regenerate, reclassify, approve and send.</li>
+      <li>“Simulate inbound reply” makes the full reply loop testable without Gmail.</li>
+      <li>“Sync Gmail” pulls unread replies when Gmail is configured.</li>
+    </ul>
+
+    <h3>Settings</h3>
+    <ul>
+      <li>Brand and campaign: name, campaign, tagline, website, tone, description, goal, audience, offer, niche selection.</li>
+      <li>Sender: name, role, email, signature, opt-out line.</li>
+      <li>Sending rhythm: daily limit, two follow-up day counts, timezone, toggles for auto follow-ups and demo mode.</li>
+      <li>Connections: AI engine status, Gmail status and missing variables, storage mode.</li>
+      <li>Automation and export: copyable cron URL, CSV links, guide link, reset demo workspace.</li>
+    </ul>
+
+    <h2>5. Implementation architecture</h2>
+    <div class="card">
+      <strong>Stack:</strong> Next.js 16.4.6, React 19.3.0, Tailwind CSS 4.3.3, TypeScript 5, App Router, Turbopack. Optional: @vercel/blob 2.9.0, lucide-react, zod.
+    </div>
+    <ul>
+      <li><strong>State model:</strong> typed entities — Lead, Thread, Message, BrandProfile, WorkspaceSettings, Activity. A single workspace object is read and written through a mutex.</li>
+      <li><strong>Persistence:</strong> private Vercel Blob at <code>reachpilot/workspace.json</code> in production, local <code>.data/workspace.json</code> in development, in-memory fallback on Vercel without Blob.</li>
+      <li><strong>AI layer:</strong> detects Claude from <code>ANTHROPIC_API_KEY</code>, then Vercel AI Gateway from <code>AI_GATEWAY_API_KEY</code>, then a deterministic local model. Functions: screen creator, compose outreach, compose follow-up, analyse reply, compose reply. All prompts request JSON only; any failure falls back to local logic.</li>
+      <li><strong>Email layer:</strong> Gmail OAuth refresh-token flow with cached tokens, MIME text/plain with List-Unsubscribe. Demo safeguard: recipients ending in <code>.example</code>, <code>.test</code> or <code>.invalid</code> always use the demo outbox.</li>
+      <li><strong>Automation:</strong> sidebar button, protected <code>/api/cron/tick</code>, and an importable n8n workflow. Each tick syncs Gmail replies and runs follow-ups.</li>
+      <li><strong>Exports:</strong> CSV for leads, outreach and replies.</li>
+      <li><strong>APIs:</strong> <code>/api/workspace</code>, <code>/api/actions</code>, <code>/api/export</code>, <code>/api/cron/tick</code>, <code>/api/gmail/sync</code>, <code>/api/health</code>.</li>
+    </ul>
+
+    <h3>Seeded demonstration data</h3>
+    <p>The seed contains 15 fictional creators with public <code>.example</code> emails, varied niches, locations and follower counts, plus 12 conversation threads. Statuses include new lead, email available, email sent, follow-up due, replied, interested, not interested, collaboration confirmed and opted out. Notable records:</p>
+    <table>
+      <thead><tr><th>Creator</th><th>Status</th><th>Why it matters for the demo</th></tr></thead>
+      <tbody>
+        <tr><td>Tara Menon</td><td>Interested</td><td>Initial email sent, inbound reply, AI reply draft in review.</td></tr>
+        <tr><td>Meera Iyer</td><td>Replied (pricing)</td><td>Shows follow-up history and a pricing enquiry reply draft.</td></tr>
+        <tr><td>Dev Patel</td><td>Collaboration confirmed</td><td>Shows a completed positive outcome and handled thread.</td></tr>
+        <tr><td>Kabir Mehta / Sana Sheikh / Priya Desai</td><td>Follow-up due</td><td>Demonstrates the follow-up engine.</td></tr>
+        <tr><td>Ishaan Bose</td><td>Opted out</td><td>Demonstrates opt-out handling and suppression.</td></tr>
+        <tr><td>Vihaan Reddy</td><td>New lead, no email</td><td>Demonstrates the “email available” gap.</td></tr>
+      </tbody>
+    </table>
+    <p>For a live demo search, use niche <strong>Sleep &amp; recovery</strong>, location <strong>Kochi</strong>, minimum 50,000 followers to surface Maya Pillai (88.4k, Kochi, <code>hello@mayawinddown.example</code>).</p>
+
+    <h2>6. How it helps in production</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin-top:0">For the marketing team</h3>
+        <ul>
+          <li>One place to find, score and contact creators instead of spreadsheets and tabs.</li>
+          <li>Consistent, personalised outreach that still sounds human.</li>
+          <li>No missed follow-ups: due items are surfaced every day.</li>
+          <li>Clear handover: every status, note and message is recorded.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">For operations and compliance</h3>
+        <ul>
+          <li>Public data only, with an explicit compliance strip and manual-entry guardrails.</li>
+          <li>Opt-outs are honoured and recorded.</li>
+          <li>Daily sending limits and a human approval gate reduce spam risk.</li>
+          <li>Optional Gmail OAuth uses a refresh token; secrets stay in environment variables.</li>
+        </ul>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Speed:</strong> discovery, scoring and drafting that used to take hours becomes minutes.</li>
+      <li><strong>Quality:</strong> AI explains why each creator fits, so decisions are defensible.</li>
+      <li><strong>Reliability:</strong> persistent Blob storage, CSV export and a cron job keep the process running.</li>
+      <li><strong>Cost:</strong> works with no paid AI key in demo mode; Claude or Vercel AI Gateway can be added when budget allows.</li>
+      <li><strong>Scale:</strong> the same workspace can support multiple campaigns by changing brand and campaign settings.</li>
+    </ul>
+
+    <h2>7. Deployment and operations</h2>
+    <ul>
+      <li><strong>GitHub:</strong> <code>OPBSUTHAR/reachpilot-ai</code>, committed as Omprakash Suthar.</li>
+      <li><strong>Vercel:</strong> production deployment on the existing team scope, connected to GitHub for auto-deploy.</li>
+      <li><strong>Storage:</strong> private Vercel Blob store, OIDC credentials, no static token required.</li>
+      <li><strong>Cron:</strong> daily at 03:00 UTC, protected by <code>CRON_SECRET</code>.</li>
+      <li><strong>Environment:</strong> <code>.env.example</code> documents every optional variable. No secrets are committed.</li>
+      <li><strong>Companion automation:</strong> importable n8n workflow at <code>/n8n/reachpilot-daily.json</code>.</li>
+    </ul>
+
+    <h2>8. Security, privacy and compliance</h2>
+    <ul>
+      <li>No passwords, tokens or account IDs are printed or committed.</li>
+      <li><code>.env*</code> is ignored except <code>.env.example</code>.</li>
+      <li>Workspace data is private Blob storage, not a public bucket.</li>
+      <li>Cron endpoint requires <code>Authorization: Bearer CRON_SECRET</code>.</li>
+      <li>Gmail integration requests <code>gmail.modify</code> only when the user explicitly runs the auth helper.</li>
+      <li>Every email includes sender identification and an opt-out line; opt-outs update the CRM.</li>
+    </ul>
+
+    <h2>9. Evaluation criteria mapping</h2>
+    <table>
+      <thead><tr><th>Criterion</th><th>Weight</th><th>Where it is demonstrated</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram research and data collection</td><td>20%</td><td>Discover filters, catalogue, manual public-profile entry, compliance strip.</td></tr>
+        <tr><td>Claude AI integration and personalisation</td><td>20%</td><td>AI adapter, scoring, email and reply generation, local fallback.</td></tr>
+        <tr><td>Gmail automation and follow-ups</td><td>20%</td><td>Gmail adapter, demo outbox, approval queue, daily limit, follow-up engine.</td></tr>
+        <tr><td>AI reply management</td><td>20%</td><td>Inbox classification, confidence, suggested action, reply drafts, status updates.</td></tr>
+        <tr><td>End-to-end workflow and demonstration</td><td>20%</td><td>Live deployed app, seeded data, demo script, screenshots, CSV, n8n workflow.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>10. How to run locally</h2>
+    <div class="card">
+      <code>npm install</code><br/>
+      <code>npm run dev</code><br/>
+      <code>npm run build &amp;&amp; npm run start</code><br/>
+      <code>npm run lint</code><br/>
+      <code>npx tsc --noEmit</code>
+    </div>
+    <p>Open <code>http://localhost:3000</code>. The demo works immediately. Add optional variables from <code>.env.example</code> to enable Claude, Vercel AI Gateway or Gmail.</p>
+
+    <h2>11. Limitations and future work</h2>
+    <ul>
+      <li>Instagram access is public-profile and manual entry only; there is no unauthorised scraping.</li>
+      <li>Claude and Gmail are optional and require user-provided credentials.</li>
+      <li>No multi-user authentication yet; the workspace is single-operator.</li>
+      <li>Future: real Instagram Graph API integration, analytics dashboard, A/B testing, calendar booking, richer multi-campaign views.</li>
+    </ul>
+
+    <div class="footer">
+      ReachPilot — built for the Sankar Group AI Automation Internship assignment by Omprakash Suthar (@OPBSUTHAR).<br/>
+      Live demo: https://reachpilot-ai.vercel.app · Repository: https://github.com/OPBSUTHAR/reachpilot-ai
+    </div>
+  </div>
+</body>
+</html>

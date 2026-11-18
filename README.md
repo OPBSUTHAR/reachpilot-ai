@@ -20,6 +20,7 @@ relationship-changing email still waits for a human.
 [![Claude ready](https://img.shields.io/badge/Claude-ready-b98563?style=flat-square)](https://www.anthropic.com)
 
 **Live demo:** <https://reachpilot-ai.vercel.app>  
+**Assignment guide (PDF):** <https://reachpilot-ai.vercel.app/docs/reachpilot-assignment-guide.pdf>  
 **Walkthrough:** open `/guide` inside the app.
 
 ![ReachPilot overview](docs/screenshots/overview.png)
