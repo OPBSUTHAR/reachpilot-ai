@@ -19,7 +19,7 @@ relationship-changing email still waits for a human.
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-3f5b48?style=flat-square)](https://vercel.com)
 [![Claude ready](https://img.shields.io/badge/Claude-ready-b98563?style=flat-square)](https://www.anthropic.com)
 
-**Live demo:** <https://reachpilot-ai-suthara.vercel.app>  
+**Live demo:** <https://reachpilot-ai.vercel.app>  
 **Walkthrough:** open `/guide` inside the app.
 
 ![ReachPilot overview](docs/screenshots/overview.png)
